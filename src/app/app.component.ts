@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Item } from './select/select.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-custom-animation';
+  items: Array<Item> = [
+    {
+      text: 1
+    },
+    {
+      text: 2
+    },
+    {
+      text: 3
+    },
+    {
+      text: 4
+    }
+  ];
+
+  selectedFirstItem: Item | undefined = undefined
+  selectedSecondItem: Item | undefined = undefined
+
+  selectFirstItem(item: Item) {
+    this.selectedFirstItem = item;
+  }
+  selectSecondItem(item: Item) {
+    this.selectedSecondItem = item;
+  }
 }
